@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<link href="https://andybrewer.github.io/mvp/mvp.css" rel="stylesheet">
+	</link>
+</head>
+
+<body>
+	<header>
+		<h1>Remote Jobs</h1>
+		<h3>{{all_info_len}} {{argu}}jobs found</h3>
+    <h5><a href="/export?job={{argu}}">Export to Csv</a></h5>
+    <h6><a href="/">Go back</a></h6>
+    
+	</header>
+	<main>
+    {%for i in range(all_info_len)%}
+		<div>
+			<h3>{{all_info[i]["title"]}}</h3>
+			<h4>{{all_info[i]["company_name"]}}</h4>
+      <h4><a href={{all_info[i]["link"]}}>Apply</a></h4>
+      <hr>
+		</div>
+    {%endfor%}
+
+	</main>
+
+
+</body>
+
+</html>
